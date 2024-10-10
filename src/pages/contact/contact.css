@@ -1,0 +1,18 @@
+.contact-body{
+    background: url("../../assests/images/StockWelcome.png");
+    height: 100vh;
+
+}
+.contact-body h1{
+    margin: 0;
+    text-align: center;
+
+
+}
+.mainh1{
+    background: #6c1fd6;
+    width: fit-content;
+    padding: 0 30px;
+    margin: auto;
+
+}

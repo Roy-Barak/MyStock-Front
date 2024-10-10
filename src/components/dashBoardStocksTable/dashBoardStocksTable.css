@@ -1,0 +1,27 @@
+.dash-board-stocks-table-main-div{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #717171;
+    background-color: #e9e6e6;
+    margin: 1rem;
+}
+
+
+.dash-board-stocks-table-tb-first-row{
+    background-color: #8d8f91;
+}
+.dash-board-stocks-table-tb-first-row th {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border: 1px solid #717171; /* Optional: Add border to header cells */
+}
+.dash-board-stocks-table-tb-body td{
+    font-size: 1.1rem;
+    padding: 1rem;
+    font-weight: bold;
+
+}
