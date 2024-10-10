@@ -1,0 +1,37 @@
+/* marketIndexTable.css */
+
+#spUpdates {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#stockTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#stockTable th,
+#stockTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+#stockTable th {
+    background-color: #ca5050;
+    font-weight: bold;
+}
+
+#stockTable tbody tr:hover {
+    background-color: #ca5050;
+}
+
+#stockTable tbody tr:nth-child(even) {
+    background-color: #107972;
+}
+
+#stockTable tbody tr:last-child {
+    border-bottom: none;
+}

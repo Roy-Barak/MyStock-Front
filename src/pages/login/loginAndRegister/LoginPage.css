@@ -1,0 +1,119 @@
+.img-div{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.login-img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+    z-index: -1;
+}
+#login {
+    align-content: center;
+    align-self: center;
+    width: 100%;
+    top: 100px;
+    margin: 2rem auto;
+    padding: 3rem 6rem;
+    max-width: 25rem;
+    text-align: center;
+    border-radius: 6px;
+    background: linear-gradient(#107972, #301247);
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+
+}
+
+#login h1 {
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: #c7a0ee;
+}
+
+#login label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-align: left;
+    color: #9f80bf;
+}
+
+#login input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    border: 1px solid #493066;
+    background: #493664;
+    color: #e5d9f1;
+    font-size: 1.3rem;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#login .input-argument-not-valid{
+    margin-bottom: 0;
+}
+.field-not-valid{
+    color: #e36c6c;
+    font-size: 1rem;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-align: left;
+}
+@keyframes blink {
+    0% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.field-not-valid.blink {
+    animation: blink 1s infinite;
+}
+
+#actions {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+#actions button{
+    padding: 1rem;
+    font-size: 1.1rem;
+
+}
+.LoginOrRegister{
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #5812b9;
+    background: #5812b9;
+    color: #e5d9f1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+}
+
+
+#login button:hover {
+    background: #6c1fd6;
+}
