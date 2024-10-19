@@ -1,20 +1,73 @@
-#tabStock button{
-background: linear-gradient(#107972, #434343);
-    border: 1px solid #666666 ;
+.card, .card-search {
+    align-content: center;
+    justify-content: center;
+    width: 12rem;
+    height: 16rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#107972, #434343);
+    border: 1px solid #666666;
     border-radius: 5%;
-    width: 120px;
-    height: 150px;
-    font-size: 15px;
     color: white;
-    margin: 0px 25px;
     box-shadow: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+
 
 }
-#tabStock button:hover{
-    background-color: #434343;
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; /* Smooth effect */
-    transform: scale(1.2);
+
+.card-back {
+    font-size: 1.3rem;
 }
-#tabStock button.active{
-      background-color: #107972;
+
+.card-search {
+    width: 50rem;
+    height: 20rem;
+    margin-right: 0;
+    font-family: Monospace;
+
 }
+
+.card-search-title {
+    font-size: 1.6rem;
+}
+
+.card-search-input {
+    width: 70%;
+    margin-top: 2rem;
+}
+
+.card-search-input, .card-search-button {
+    font-family: Monospace;
+    align-self: center;
+    height: 2rem;
+    background: #bcbcbc;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 1.1rem;
+
+}
+
+.card-search-input::placeholder {
+    color: black;
+}
+
+/*.card-search-input:focus {*/
+/*    outline: none;*/
+
+/*}*/
+.card-search-button {
+    width: 30%;
+    margin-top: 4rem;
+    height: 2rem;
+    border-radius: 0;
+    border: #333333 solid 2px;
+
+}
+
+.card-search-button:hover {
+    background: #fff;
+}
+

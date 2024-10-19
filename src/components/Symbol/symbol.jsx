@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import fetchStockDate from './symbolData'; // Ensure the import path is correct
 import './symbol.css';
 import {CircularProgress} from "@mui/joy";
@@ -20,11 +20,11 @@ function Symbol(props) {
         fetchData();
     }, [props.name]);
 
-    if (!stockData ) {
+    if (!stockData) {
         return (
             <>
                 <h3>{props.name}</h3>
-                <p>Loading data <CircularProgress /></p>
+                <p>Loading data <CircularProgress/></p>
             </>
         );
     }
@@ -33,18 +33,16 @@ function Symbol(props) {
     const changePrecentage = (100 * stockData.price / stockData.prevValue - 100).toFixed(2);
 
     // Determine the color based on the value of changePrecentage
-    const changeColor = changePrecentage > 0 ? 'green' : 'red';
+    const changeColor = changePrecentage > 0 ? '#28a745' : '#dc3545';
 
     return (
-
-        <>
-            <h3>{props.name}</h3>
-            <p>Current Price: {stockData.price}</p>
-
-            <p style={{ color: changeColor }}>
-                Change: {changePrecentage}%
+        <div className="symbol">
+            <h3 className="symbol-title">{props.name}</h3>
+            <p className="symbol-price"> Price: {stockData.price}</p>
+            <p className="symbol-change" style={{color: changeColor}}>
+                {changePrecentage}%
             </p>
-        </>
+        </div>
     );
 }
 

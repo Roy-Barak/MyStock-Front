@@ -1,37 +1,72 @@
 // src/App.js
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Home from "./pages/home/home"
 import Navbar from "./components/navbar/navbar"
-import {Route, Routes,} from "react-router-dom";
+import {Route, Routes, useNavigate,} from "react-router-dom";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/footer/footer"
-import Register from "./pages/login/loginAndRegister/RegisterPage"
 import LoginAndRegister from "./pages/login/loginAndRegister/LoginAndRegister";
 import Dashboard from "./pages/dashBoard/dashBoard";
 
 
+function App() {
+    const [user, setUser] = useState(localStorage.getItem("userName"));
+    const navigate = useNavigate();
+    const fetchUser = async () => {
+        console.log("try to fetch")
+        try {
+            const response = await fetch("http://127.0.0.1:5000/user/data", {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json',
+                },
+            });
 
-    function App() {
-        const [user,setUser] = useState(localStorage.getItem("userName"));
-        function handleUser(user){
-            setUser(user)
+            if (!response.ok) {
+                console.log("Failed to fetch user data");
+                handleUser('');
+                localStorage.removeItem("userName")
+            }
+        } catch (error) {
+            console.error("Error fetching user data:", error);
         }
-    return (
-    <div>
-    <Navbar user={user} handleUser={handleUser}/>
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/loginAndRegister" element={<LoginAndRegister handleUser={handleUser}/>}/>
-    <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/dashboard" element={<Dashboard handleUser={handleUser}/>}/>
-    </Routes>
-        <Footer/>
-    </div>
+    };
+    useEffect(() => {
+        // Fetch user data immediately on mount
+        fetchUser();
 
-)
-;
+        // Set an interval to check the token every minute
+        const interval = setInterval(() => {
+            fetchUser();
+        }, 60000); // 60,000 milliseconds = 1 minute
+
+        // Clear the interval on component unmount
+        return () => clearInterval(interval);
+    }, []);
+
+    function handleUser(user) {
+        setUser(user)
+    }
+
+    return (
+        <div>
+
+            <Navbar user={user} handleUser={handleUser}/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/loginAndRegister" element={<LoginAndRegister handleUser={handleUser}/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/dashboard" element={<Dashboard handleUser={handleUser}/>}/>
+            </Routes>
+            <Footer/>
+
+        </div>
+
+    )
+        ;
 
 }
 

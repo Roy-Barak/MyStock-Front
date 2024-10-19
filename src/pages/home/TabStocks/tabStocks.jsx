@@ -1,29 +1,26 @@
-import TabStock from "../../../components/Symbol/tabStock";
-import Symbol from "../../../components/Symbol/symbol";
-import React, {useState} from "react";
+import React from "react";
 import './tabStocks.css'
+import TabStock from "../../../components/Symbol/tabStock";
 
-export default function TabStocks(){
-    const [selectedStock,setSelectedStock] = useState()
-    function handleSelect(selectStock){
-        setSelectedStock(selectStock)
+export default function TabStocks() {
 
-    }
-    return(
-        <section id = "tabStock">
-        <h2>StockInformation</h2>
-    <menu className="tab-stocks" >
-        <TabStock isSelected={selectedStock==='AAPL'} onSelect={()=>handleSelect('AAPL')}>Apple</TabStock>
-        <TabStock isSelected={selectedStock==='AMZN'} onSelect={()=>handleSelect('AMZN')}>Amazon</TabStock>
-        <TabStock isSelected={selectedStock==='TSLA'} onSelect={()=>handleSelect('TSLA')}>Tesla</TabStock>
-        <TabStock isSelected={selectedStock==='NVDA'} onSelect={()=>handleSelect('NVDA')}>Nvidia</TabStock>
-        <TabStock isSelected={selectedStock==='GOOG'} onSelect={()=>handleSelect('GOOG')}>Google</TabStock>
-        <TabStock isSelected={selectedStock==='META'} onSelect={()=>handleSelect('META')}>Facebook</TabStock>
-    </menu>
+    return (
+        <section id="tabStock">
+            <div className="tab-stocks-animation">
 
-
-    {!selectedStock ? undefined :
-        <Symbol name ={selectedStock}/>}
-</section>
+            </div>
+            <h2>StockInformation</h2>
+            <div className="tab-stocks">
+                <TabStock stock={"AAPL"}>Apple</TabStock>
+                <TabStock stock={"AMZN"}>Amazon</TabStock>
+                <TabStock stock={"TSLA"}>Tesla</TabStock>
+                <TabStock stock={"NVDA"}>Nvidia</TabStock>
+                <TabStock stock={"GOOG"}>Google</TabStock>
+                <TabStock stock={"META"}>Facebook</TabStock>
+            </div>
+            <div className="tab-stocks tab-search">
+                <TabStock isItSearch={true}></TabStock>
+            </div>
+        </section>
     )
 }

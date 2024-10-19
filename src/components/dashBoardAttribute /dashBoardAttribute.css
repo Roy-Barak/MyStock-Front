@@ -1,28 +1,45 @@
-.dash-board-attribute{
+.dash-board-attribute {
     display: flex;
-    width: 60%;
-    height: 90%;
+    width: fit-content;
+    height: 100%;
     margin: auto;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background:  #e9e6e6;
+    background: #e9e6e6;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: #333333;
+
 }
-.dash-board-attribute:hover{
+
+.dash-board-attribute-loading {
+    height: 100%;
+    background: #d8d4d4;
+    width: 12rem;
+    color: transparent;
+    animation: blink-div 3s infinite;
+}
+
+.dash-board-attribute-contact {
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.dash-board-attribute:hover {
     background: #cbc5c5;
     transition: background-color 0.3s;
 }
-.dash-board-attribute-title{
+
+.dash-board-attribute-title {
     align-self: center;
     font-size: 1.3rem;
     text-decoration: black;
     margin: 0;
 
 }
-.dash-board-attribute-value{
+
+.dash-board-attribute-value {
     align-self: center;
     margin: 0.6rem;
     font-size: 2rem;

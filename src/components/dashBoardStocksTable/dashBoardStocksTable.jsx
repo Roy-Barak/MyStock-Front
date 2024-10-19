@@ -1,9 +1,6 @@
 import './dashBoardStocksTable.css'
-import AnimationSkeleton from "../../assests/loading/waveAnimation";
-import ImageSkeleton from "../../assests/loading/waveAnimation";
-import LinearProgressCountUp from "../../assests/loading/linerProgress";
-import {CircularProgress} from "@mui/joy";
-export default function DashBoardStocksTable({userData}){
+
+export default function DashBoardStocksTable({userData}) {
 
     return (
         <div className="dash-board-stocks-table-main-div">
@@ -21,24 +18,33 @@ export default function DashBoardStocksTable({userData}){
                         {/* Add more headers as needed */}
                     </tr>
                     </thead>
-                    <tbody  className="dash-board-stocks-table-tb-body">
+                    <tbody className="dash-board-stocks-table-tb-body">
                     {Object.entries(userData.stocks).map(([symbol, stockData]) => (
-                        <tr  key={symbol}>
-                            <td >{symbol}</td>
+                        <tr key={symbol}>
+                            <td>{symbol}</td>
                             <td>{stockData.shares}</td>
                             <td>{stockData.buy_price}</td>
                             <td>{stockData.current_price}</td>
                             <td style={{color: stockData.profit_number >= 0 ? "#28a745" : '#dc3545'}}>{stockData.profit_number}</td>
                             <td style={{color: stockData.profit_number >= 0 ? "#28a745" : '#dc3545'}}>{stockData.profit_percentage}</td>
-                            <td style={{color: stockData.current_price- stockData.previous_price >= 0 ? "#28a745" : '#dc3545'}}>{
-                                (stockData.current_price- stockData.previous_price).toFixed(2)}</td>
+                            <td style={{color: stockData.current_price - stockData.previous_price >= 0 ? "#28a745" : '#dc3545'}}>{
+                                (stockData.current_price - stockData.previous_price).toFixed(2)}</td>
                             {/* Add more stock details as needed */}
                         </tr>
                     ))}
                     </tbody>
                 </table>
+            ) : userData && userData.stocks && Object.keys(userData.stocks).length === 0 ? (
+                <div className="dash-board-stocks-table-tb-empty">
+                    <h2>Welcome To Your Personal Portfolio!</h2>
+                    <p>Buy stocks to start the simulation and watch your investments grow.</p>
+                    <p className="instructions">Get started by exploring our stock market and making your first
+                        purchase!</p>
+                </div>
             ) : (
-                <CircularProgress/>
+                <div className="dash-board-stocks-table-tb-loading">
+
+                </div>
             )}
         </div>
     )

@@ -1,4 +1,4 @@
-.dash-board-stocks-table-main-div{
+.dash-board-stocks-table-main-div {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -7,21 +7,63 @@
     border: 2px solid #717171;
     background-color: #e9e6e6;
     margin: 1rem;
+    max-height: 30rem; /* Set the desired maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+}
+
+.dash-board-stocks-table-tb thead {
+    position: sticky;
+    top: 0;
+
 }
 
 
-.dash-board-stocks-table-tb-first-row{
+.dash-board-stocks-table-tb-first-row {
     background-color: #8d8f91;
 }
+
 .dash-board-stocks-table-tb-first-row th {
     padding: 0.5rem;
     font-size: 1.2rem;
     color: white;
     border: 1px solid #717171; /* Optional: Add border to header cells */
 }
-.dash-board-stocks-table-tb-body td{
+
+.dash-board-stocks-table-tb-body td {
     font-size: 1.1rem;
     padding: 1rem;
     font-weight: bold;
+}
 
+.dash-board-stocks-table-tb-empty {
+    background: #d8d4d4;
+    height: 30rem;
+    align-content: center;
+
+}
+
+.dash-board-stocks-table-tb-empty h2 {
+    align-content: start;
+    font-size: 1.8rem;
+}
+
+.dash-board-stocks-table-tb-empty p {
+    font-size: 1.3rem;
+}
+
+.dash-board-stocks-table-tb-loading {
+    background: #d8d4d4;
+    height: 30rem;
+    animation: blink-div 3s infinite;
+    color: transparent;
+}
+
+@keyframes blink-div {
+    0%, 50%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
 }

@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import './navbar.css';
+import Lottie from "lottie-react";
+import coinAnimation from "../../assests/animation/coinAnimation.json"
 
-export default function Navbar({ user, handleUser }) {
+export default function Navbar({user, handleUser}) {
     const [userDropDown, setUserDropDown] = useState(false);
     const navigate = useNavigate();
     const userName = localStorage.getItem("userName")
+
     function handleUserDropDown(state) {
         setUserDropDown(state);
     }
@@ -24,7 +27,15 @@ export default function Navbar({ user, handleUser }) {
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </div>
+            <div className="navbar-mystock-text">
+                <p>
+                    -Your personal stock portfolio management tool-
+                </p>
+            </div>
             <div className="login">
+                <div className="navbar-coin-animation">
+                    <Lottie animationData={coinAnimation}/>
+                </div>
                 {user ? (
                     <div
                         className={`dropDown ${userDropDown ? 'active' : ''}`}
@@ -35,7 +46,7 @@ export default function Navbar({ user, handleUser }) {
                         {userDropDown && (
                             <div className="dropdown-content"
 
-                                 onMouseLeave={()=>handleUserDropDown(false)}>
+                                 onMouseLeave={() => handleUserDropDown(false)}>
                                 <ul>
                                     <li>
                                         <Link to="/dashboard">Dashboard</Link>

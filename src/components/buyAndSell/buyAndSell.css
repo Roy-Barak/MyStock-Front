@@ -15,23 +15,32 @@
 
 
 }
-.dash-board-buy-sell-window-2{
+
+.dash-board-buy-sell-window-2 {
     background: #107972;
     width: 30%;
-    height: 40%;
+    height: fit-content;
     text-align: center;
+    padding: 2rem;
 
 }
-.dash-board-buy-sell-window-title{
+
+.dash-board-buy-sell-window-2-stock-price {
+    font-weight: bold;
+    color: #719edb;
+}
+
+.dash-board-buy-sell-window-title {
     font-size: 3rem;
     color: white;
     letter-spacing: 0.1rem;
-   padding: 1rem;
+    padding: 1rem;
     width: fit-content;
     margin-top: 1rem;
     margin: auto;
 }
-.dash-board-buy-sell-window label{
+
+.dash-board-buy-sell-window label {
     display: block;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
@@ -39,7 +48,7 @@
     margin-top: 1.2rem;
 }
 
-.dash-board-buy-sell-window input{
+.dash-board-buy-sell-window input {
     text-transform: uppercase;
     margin-top: 1rem;
     height: 2rem;
@@ -47,19 +56,27 @@
     text-align: center;
     font-size: 1.2rem;
 }
-.dash-board-buy-sell-action-button{
+
+.dash-board-buy-sell-action-button {
     width: 30%;
     padding: 0.8rem;
     font-size: 1.2rem;
     background: #97eb9b;
     margin-top: 1rem;
 }
-.suggestions-dropdown{
+
+.error-message-buy {
+    color: #e36c6c;
+    animation: blink 1.5s infinite;
+}
+
+.suggestions-dropdown {
     display: flex;
     cursor: pointer;
     justify-content: center;
     position: relative;
 }
+
 .suggestions-dropdown-contact {
     position: absolute; /* Absolute positioning */
     background: #aaa5a5;
@@ -71,16 +88,19 @@
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #070707;
 }
-.suggestions-dropdown-contact li{
+
+.suggestions-dropdown-contact li {
     font-size: 1.2rem;
     width: 100%;
     border-bottom: 2px solid black;
-}.suggestions-dropdown-contact ul{
-     padding: 0;
+}
+
+.suggestions-dropdown-contact ul {
+    padding: 0;
     list-style-type: none;
     margin-top: 0.2rem;
 
- }
+}
 
 .suggestion-item:hover {
     background-color: #d0e7e6; /* Change color on hover */

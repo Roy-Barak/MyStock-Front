@@ -1,16 +1,19 @@
-.img-div{
+.img-div {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
 }
-.login-img{
+
+.login-img {
     position: absolute;
     width: 100%;
     height: 100vh;
     opacity: 0.8;
     z-index: -1;
 }
+
+
 #login {
     align-content: center;
     align-self: center;
@@ -22,7 +25,7 @@
     text-align: center;
     border-radius: 6px;
     background: linear-gradient(#107972, #301247);
-    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -60,10 +63,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#login .input-argument-not-valid{
+
+#login .input-argument-not-valid {
     margin-bottom: 0;
 }
-.field-not-valid{
+
+.field-not-valid {
     color: #e36c6c;
     font-size: 1rem;
     display: block;
@@ -72,12 +77,13 @@
     font-weight: 700;
     text-align: left;
 }
+
 @keyframes blink {
     0% {
         color: black;
     }
     50% {
-        color: red;
+        color: #e36c6c;
     }
     100% {
         color: black;
@@ -94,12 +100,14 @@
     justify-content: space-between;
     margin-top: 1rem;
 }
-#actions button{
+
+#actions button {
     padding: 1rem;
     font-size: 1.1rem;
 
 }
-.LoginOrRegister{
+
+.LoginOrRegister {
     padding: 0.5rem 1.5rem;
     margin-bottom: 1rem;
     border-radius: 4px;
