@@ -43,12 +43,16 @@
 
 }
 
+.contact-container-phone {
+    margin-left: 5rem;
+}
+
 .contact-container-email {
     grid-row: 1;
     grid-column: 2;
     justify-self: center;
     align-self: center;
-    margin-right: 1rem;
+
     font-size: 1.4rem;
 }
 
@@ -72,25 +76,71 @@
     margin-right: 1rem;
 }
 
-@media (max-width: 1300px) {
-    .contact-icons {
+/* Only change layout below 1350px */
+@media (max-width: 1400px) {
+    .contact-container-information {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+        margin-bottom: 3rem;
+    }
+
+    .profile-img-about {
+        max-width: 30%; /* Keep profile image size reasonable */
+        grid-row: 1; /* Move image to the top */
+        margin: 0 auto;
+    }
+
+    .contact-container-title {
         grid-row: 2;
-        grid-column: auto;
+        grid-column: 1 / -1;
+        font-size: 2.5rem; /* Adjust title size */
     }
 
     .contact-container-email {
         grid-row: 3;
-        grid-column: auto;
+        grid-column: 1 / -1; /* Make email span full width */
+        justify-self: center;
+        margin-right: 0;
     }
 
     .contact-container-phone {
-        grid-row: 5;
-        grid-column: auto;
+        grid-row: 4;
+        grid-column: 1 / -1; /* Make phone number span full width */
+
+        margin-left: 0;
     }
 
-    .contact-container-phone, .contact-container-email, .contact-icons {
-        grid-column: auto; /* Automatically place each in a new row/column */
-        grid-row: auto;
-        width: 100%; /* Make sure each takes full width on smaller screens */
+    .contact-icons {
+        grid-row: 5;
+        grid-column: 1 / -1; /* Make icons span full width */
+        justify-self: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Further size adjustments for screens between 1300px and 700px */
+@media (max-width: 1300px) and (min-width: 700px) {
+    .profile-img-about {
+        max-width: 40%; /* Slightly reduce profile image size */
+    }
+}
+
+/* Adjustments for very small screens (below 700px) */
+@media (max-width: 700px) {
+    .contact-container-information {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .profile-img-about {
+        max-width: 60%; /* Further reduce image size */
+        margin: 0 auto;
+    }
+
+    .contact-container-title {
+        font-size: 1.8rem; /* Adjust title size */
+    }
+
+    .contact-container-email, .contact-container-phone, .contact-icons {
+        grid-column: 1 / -1; /* Make each element span full width */
+        margin-top: 1rem;
     }
 }
