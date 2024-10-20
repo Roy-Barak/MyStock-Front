@@ -2,8 +2,8 @@
 import React, {useEffect, useState} from 'react';
 import Home from "./pages/home/home"
 import Navbar from "./components/navbar/navbar"
-import {Route, Routes, useNavigate,} from "react-router-dom";
-import About from "./pages/about/About";
+import {Route, Routes,} from "react-router-dom";
+import About from "./pages/about/about";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/footer/footer"
 import LoginAndRegister from "./pages/login/loginAndRegister/LoginAndRegister";
@@ -12,7 +12,6 @@ import Dashboard from "./pages/dashBoard/dashBoard";
 
 function App() {
     const [user, setUser] = useState(localStorage.getItem("userName"));
-    const navigate = useNavigate();
     const fetchUser = async () => {
         console.log("try to fetch")
         try {
@@ -39,8 +38,11 @@ function App() {
 
         // Set an interval to check the token every minute
         const interval = setInterval(() => {
-            fetchUser();
-        }, 60000); // 60,000 milliseconds = 1 minute
+
+            if (localStorage.getItem("userName")) {
+                fetchUser();
+            }
+        }, 120000); // 60,000 milliseconds = 1 minute
 
         // Clear the interval on component unmount
         return () => clearInterval(interval);

@@ -5,6 +5,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -12,6 +13,8 @@
     justify-content: space-between;
     font-size: 1.4rem;
     font-family: Monospace;
+    /*flex-wrap: wrap;*/
+
 }
 
 .nav-links {
@@ -78,7 +81,6 @@
     width: 100%;
     border-radius: 10px;
 
-
 }
 
 .dropDown-button {
@@ -129,6 +131,27 @@
     border-bottom: 1px solid black;
 }
 
+.responsive_nav {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center;
+}
+
+.nav-btn {
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    opacity: 0;
+    visibility: hidden;
+    color: #fff;
+}
+
+.nav-close-btn {
+    justify-self: start;
+    align-self: start;
+    display: inline-block;
+}
+
 @keyframes wiggle {
     0% {
         opacity: 0;
@@ -140,4 +163,37 @@
         padding: 3rem 0;
     }
 
+
+}
+
+@media (max-width: 1400px) {
+    .nav-btn {
+        visibility: visible;
+        opacity: 1;
+        margin-left: 2rem;
+
+    }
+
+    .navbar {
+        transition: left 0.3s ease;
+    }
+
+    .navbar-mystock-text {
+        margin: auto;
+    }
+
+    .nav-links, .login {
+        display: none; /* Hide nav links in mobile view by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #555252; /* Match navbar background */
+    }
+
+    .nav-links a {
+        padding: 0.5rem;
+    }
+
+    .responsive_nav .nav-links, .responsive_nav .login {
+        display: flex; /* Show nav links when the navbar is expanded */
+        padding: 1rem;
+    }
 }

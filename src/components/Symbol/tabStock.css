@@ -10,10 +10,9 @@
     border: 1px solid #666666;
     border-radius: 5%;
     color: white;
-    box-shadow: white;
     font-size: 1.6rem;
     font-weight: bold;
-
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -22,10 +21,12 @@
 }
 
 .card-search {
-    width: 50rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 30rem;
     height: 20rem;
     margin-right: 0;
     font-family: Monospace;
+
 
 }
 

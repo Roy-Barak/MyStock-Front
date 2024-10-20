@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import './navbar.css';
 import Lottie from "lottie-react";
 import coinAnimation from "../../assests/animation/coinAnimation.json"
+import {FaBars} from "react-icons/fa"
 
 export default function Navbar({user, handleUser}) {
     const [userDropDown, setUserDropDown] = useState(false);
     const navigate = useNavigate();
     const userName = localStorage.getItem("userName")
+    const [menuOpen, setMenuOpen] = useState(false);
 
     function handleUserDropDown(state) {
         setUserDropDown(state);
+    }
+
+    function toggleMenu() {
+        setMenuOpen(prevState => !prevState)
     }
 
     function handleLogOut() {
@@ -20,22 +26,43 @@ export default function Navbar({user, handleUser}) {
         navigate('/loginAndRegister');
     }
 
+    useEffect(() => {
+        handleLinkClick()
+    }, [navigate]);
+
+    function handleLinkClick() {
+        if (menuOpen) {
+            toggleMenu();
+        }
+    }
+
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${menuOpen ? 'responsive_nav' : ''}`}>
+            {menuOpen && ( // Show close button only if menu is open
+                <button className="nav-btn nav-close-btn" onClick={toggleMenu}>
+                    <FaBars/>
+                </button>
+            )}
+            {!menuOpen && ( // Show menu button only if menu is closed
+                <button className="nav-btn" onClick={toggleMenu}>
+                    <FaBars/>
+                </button>
+            )}
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </div>
-            <div className="navbar-mystock-text">
+
+            {!menuOpen && <div className="navbar-mystock-text">
                 <p>
                     -Your personal stock portfolio management tool-
                 </p>
-            </div>
+            </div>}
             <div className="login">
-                <div className="navbar-coin-animation">
+                {!menuOpen && <div className="navbar-coin-animation">
                     <Lottie animationData={coinAnimation}/>
-                </div>
+                </div>}
                 {user ? (
                     <div
                         className={`dropDown ${userDropDown ? 'active' : ''}`}
@@ -59,9 +86,12 @@ export default function Navbar({user, handleUser}) {
                         )}
                     </div>
                 ) : (
-                    <Link className="login-register-button" to="/loginAndRegister">Login / Register</Link>
+                    <Link className="login-register-button" to="/loginAndRegister">Login /
+                        Register</Link>
                 )}
             </div>
+
         </nav>
+
     );
 }

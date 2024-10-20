@@ -8,11 +8,10 @@ export default function Explanation() {
 
         <div className="explanation">
             <div className="explanation-reasons">
-                <div className="explanation-reasons-title">
-                    <h2 className="explanation-number-of-user-title">Why My Stock?</h2>
-                    {/*<Lottie animationData={animation} className="explanation-reasons-title-animation"/>*/}
 
-                </div>
+                <h2 className="explanation-number-of-user-title">Why My Stock?</h2>
+
+
                 <div className="explanation-reason1">
                     <h3 className="explanation-reason-title">Comprehensive Portfolio Management</h3>
                     <p>My Stocks offers a convenient platform for tracking and managing
