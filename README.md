@@ -18,7 +18,6 @@ npm install
 3. Start the Application
 After installing the dependencies, start the development server:
 
-sql
-Copy code
+
 npm start
 The application will now be running locally. You can access it by navigating to http://localhost:3000/ in your browser.
