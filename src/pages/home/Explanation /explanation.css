@@ -4,10 +4,10 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    /*border: #838383 solid 2rem;*/
-    /*border-radius: 40px;*/
     font-family: Sans-serif;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    min-height: 70vh;
+
 
 }
 
@@ -29,8 +29,7 @@
 }
 
 .explanation-reason3-animation, .explanation-reason1-animation {
-    max-width: 70%;
-    max-height: 300px;
+
 
 }
 
@@ -44,6 +43,7 @@
     grid-auto-rows: auto;
     gap: 1rem; /* Space between items */
     width: 100%; /* Full width */
+   
 
 }
 
@@ -53,7 +53,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 80%;
+    max-width: 550px;
     border-radius: 20px;
     text-align: center;
     font-size: 1.1rem;

@@ -1,10 +1,12 @@
+
 .dash-board {
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: 51px 1fr 1fr 3fr;
-    background: #577e8b;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic columns */
+    grid-template-rows: 51px auto;
+    background: linear-gradient(#107972, #301247);
     color: #666666;
+    gap: 1rem;
 }
 
 .dash-board-main-title {
@@ -63,14 +65,15 @@
     grid-column: 5/6;
     align-content: end;
     grid-row: 4;
-    width: 100%;
     justify-content: center;
+
 
 }
 
 .dash-board-buy-button, .dash-board-sell-button {
-    width: 20rem;
-    height: 5rem;
+    min-width: 40%;
+    height: 30%;
+    flex-grow: 1;
     align-self: center;
     margin-right: 2rem;
     background: #97eb9b;
@@ -101,4 +104,22 @@
 .dash-board-logout-button {
     height: 20%;
     grid-row: 5;
+}
+
+@media (max-width: 1024px) {
+    .dash-board {
+        grid-template-columns: repeat(1, 1fr); /* Shrink to 3 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .dash-board {
+        grid-template-columns: repeat(2, 1fr); /* Shrink to 2 columns on smaller tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-board {
+        grid-template-columns: 1fr; /* One column on mobile devices */
+    }
 }

@@ -1,16 +1,36 @@
-#tabStock h2 {
+.tabStocks {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+}
+
+.tabStocks-img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    opacity: 0.8;
+    height: 100vh;
+
+}
+
+.tabStock-title {
     margin: 5rem;
     text-align: center;
     font-family: Monospace;
     font-size: 1.8rem;
 }
 
-.tab-stocks {
+.tab-stocks, .tab-search {
     margin-bottom: 8rem;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.tab-search {
+    margin: 0;
 }
 

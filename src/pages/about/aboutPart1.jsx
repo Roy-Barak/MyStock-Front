@@ -1,16 +1,16 @@
 import React from 'react';
 import './about.css';
 import StockWelcomeImage from "../../assests/images/seaBackground.jpeg";
-import profilePic from "../../assests/images/RoyImg2.png";
+import profilePic from "../../assests/images/a3.png";
 
 export default function AboutPart1() {
     return (
         <div className="about-container">
-            <img className="login-img" src={StockWelcomeImage} alt=""/>
+            <img className="login-img about-container-img" src={StockWelcomeImage} alt=""/>
             <div className="about-container-information">
 
                 <img className="profile-img" src={profilePic} alt="Roy Barak Profile"/>
-                <p className="about-container-hello">Hey, my name is Roy Barak! Welcome to My Stock!</p>
+                <p className="about-container-hello">My name is Roy Barak Welcome to My Stock!</p>
 
                 <p className="about-container-roy-p">
                     I'm a 27-year-old computer science student. Over the past year, I decided to deepen my knowledge in

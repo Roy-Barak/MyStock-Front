@@ -14,17 +14,17 @@ async function fetchStockDate(symbol) {
             //return array for two users first for stockTab and the second for StockTable
             [
                 {
-            price: stockData[0].current_price,
-            prevValue: stockData[0].previous_close,
-            name: stockData[0].name
-            },
-        {
-            price:stockData[1].bid,
-            prevValue: stockData[0].previous_close,
-                name: stockData[0].name
-        }
+                    price: stockData[0].current_price,
+                    prevValue: stockData[0].previous_close,
+                    name: stockData[0].name
+                },
+                {
+                    price: stockData[1].bid,
+                    prevValue: stockData[0].previous_close,
+                    name: stockData[0].name
+                }
             ])
-        ;
+            ;
     } catch (error) {
         console.error(`Error fetching ${symbol} updates:`, error);
         return null;

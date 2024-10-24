@@ -1,30 +1,35 @@
 .navbar {
     background-color: #555252; /* Background color for the navbar */
     color: #fff; /* Text color for the navbar */
-    /*padding: 0.9rem; !* Padding for the navbar *!*/
+
     position: fixed;
     width: 100%;
     top: 0;
-
     z-index: 1;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-size: 1.4rem;
     font-family: Monospace;
-    /*flex-wrap: wrap;*/
+
 
 }
 
 .nav-links {
     margin-left: 1rem;
     display: flex;
+    justify-content: flex-start; /* Keep links aligned to the left */
+    flex: 1; /* Allow nav links to take available space on the left */
+    max-width: 33%
+
+
 }
 
 .navbar-mystock-text {
     font-family: Fantasy;
     font-size: 1.2rem;
+    flex: 1; /* Allow nav links to take available space on the left */
+    text-align: center;
 }
 
 .navbar-coin-animation {
@@ -35,12 +40,17 @@
 
 .login {
     display: flex;
+    max-width: 33%;
+    flex: 1;
+    justify-content: flex-end;
+    
 }
 
 .nav-links a {
     text-decoration: none;
     color: #fff;
     margin-right: 5rem;
+    width: 100%
 }
 
 .nav-links a:hover {

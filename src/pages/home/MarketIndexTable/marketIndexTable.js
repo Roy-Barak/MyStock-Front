@@ -1,15 +1,15 @@
 // src/components/MarketIndexTable.js
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import './marketIndexTable.css';
 import {LinearProgress} from "@mui/joy";
 import fetchStockDate from "../../../components/Symbol/symbolData"; // Import CSS for MarketIndexTable styles
 
-export default function MarketIndexTable (){
+export default function MarketIndexTable() {
     const [indicesData, setIndicesData] = useState([]);
 
     useEffect(() => {
         const fetchIndicesData = async () => {
-            const indices = ["%5EGSPC", "%5EDJI", "%5EIXIC", "%5EFTSE", "%5EGDAXI", "%5EFCHI"];
+            const indices = ["%5EGSPC", "%5EDJI", "^NYA", "^OEX", "%5EIXIC", "%5EFTSE", "%5EGDAXI", "%5EFCHI"];
             const fetchedData = await Promise.all(indices.map(index => fetchStockDate(index)));
             setIndicesData(fetchedData);
         };
@@ -39,7 +39,7 @@ export default function MarketIndexTable (){
                                 <td>{data[1].name}</td>
                                 <td>{data[1].price}</td>
                                 <td>{data[1].prevValue}</td>
-                                <td style={{ color: changePercent >= 0 ? 'green' : 'red' }}>
+                                <td style={{color: changePercent >= 0 ? 'green' : 'red'}}>
                                     {changePercent}%
                                 </td>
                             </tr>
@@ -47,7 +47,7 @@ export default function MarketIndexTable (){
                     } else {
                         return (
                             <tr key={index}>
-                                <td colSpan="4"><LinearProgress /> </td>
+                                <td colSpan="4"><LinearProgress/></td>
                             </tr>
                         );
                     }
