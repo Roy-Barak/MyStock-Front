@@ -130,33 +130,38 @@ const Dashboard = ({handleUser}) => {
         <div className="dash-board">
 
             <h1 className="dash-board-main-title"> Dashboard </h1>
-            <div className="dash-board-balance-cash" style={{zIndex: buyOrSell === "buy" ? '100' : '0'}}>
-                <DashBoardAttribute userData={userData} title="Cash Balance"
-                                    value={Math.floor(userData.balance) + "$"}/>
+            <div className="dash-board-attributes">
+                <div className="dash-board-balance-cash" style={{zIndex: buyOrSell === "buy" ? '100' : '0'}}>
+                    <DashBoardAttribute userData={userData} title="Cash Balance"
+                                        value={Math.floor(userData.balance) + "$"}/>
+                </div>
+                <div className="dash-board-pl">
+                    <DashBoardAttribute title="P&L Daily" userData={userData} value={
+                        (100 * (currentPortfolioValue - previousPortfolioValue) / previousPortfolioValue).toFixed(2)
+                        + "%"} value2={pAndL.toFixed(2)}/>
+                </div>
+                <div className="dash-board-stocks-value">
+                    <DashBoardAttribute title="Portfilo Value" userData={userData}
+                                        value={stocksValue.toFixed(0) + "$"}/>
+                </div>
+                <div className="dash-board-portfolio-performance">
+                    <DashBoardAttribute userData={userData} title="Portfolio Performance"
+                                        value={Math.floor(userData.balance + stocksValue - 10000) + "$"}/>
+                </div>
+                <div className="dash-board-total-balance">
+                    <DashBoardAttribute userData={userData} title="Total Balance"
+                                        value={(userData.balance + stocksValue).toFixed(0) + "$"}/>
+                </div>
             </div>
-            <div className="dash-board-pl">
-                <DashBoardAttribute title="P&L Daily" userData={userData} value={
-                    (100 * (currentPortfolioValue - previousPortfolioValue) / previousPortfolioValue).toFixed(2)
-                    + "%"} value2={pAndL.toFixed(2)}/>
-            </div>
-            <div className="dash-board-stocks-value">
-                <DashBoardAttribute title="Portfilo Value" userData={userData}
-                                    value={stocksValue.toFixed(0) + "$"}/>
-            </div>
-            <div className="dash-board-portfolio-performance">
-                <DashBoardAttribute userData={userData} title="Portfolio Performance"
-                                    value={Math.floor(userData.balance + stocksValue - 10000) + "$"}/>
-            </div>
-            <div className="dash-board-total-balance">
-                <DashBoardAttribute userData={userData} title="Total Balance"
-                                    value={(userData.balance + stocksValue).toFixed(0) + "$"}/>
-            </div>
-            <div className="dash-board-buy-sell">
-                <button className="dash-board-buy-button" onClick={() => handleBuy("buy")}>Buy</button>
-                <button className="dash-board-sell-button" onClick={() => handleBuy("sell")}>Sell</button>
-            </div>
-            <div className="dash-board-stocks-table">
-                <DashBoardStocksTable userData={userData}/>
+            <div className="dash-board-table-and-sell">
+                <div className="dash-board-stocks-table">
+                    <DashBoardStocksTable userData={userData}/>
+                </div>
+                <div className="dash-board-buy-sell">
+                    <button className="dash-board-buy-button" onClick={() => handleBuy("buy")}>Buy</button>
+                    <button className="dash-board-sell-button" onClick={() => handleBuy("sell")}>Sell</button>
+                </div>
+
             </div>
             {buyOrSell &&
                 <BuyAndSell portfolioStocksList={portfolioStocksList} toSell={sell}

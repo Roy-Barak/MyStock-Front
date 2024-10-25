@@ -1,7 +1,6 @@
 .dash-board-attribute {
-    display: flex;
-    width: 80%;
-    min-height: 100%;
+    display: flex;;
+    padding: 2rem;
     margin: auto;
     flex-direction: column;
     justify-content: center;
@@ -10,14 +9,16 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: #333333;
-    flex-wrap: wrap;
+    min-width: 15rem;
+
 
 }
 
 .dash-board-attribute-loading {
     min-height: 100%;
+
     background: #d8d4d4;
-    /*width: 12rem;*/
+
     color: transparent;
     animation: blink-div 3s infinite;
 }
@@ -47,9 +48,9 @@
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .dash-board-attribute-value {
-        font-size: 1.5rem; /* Smaller font for smaller screens */
+        font-size: 1.6rem; /* Smaller font for smaller screens */
     }
 
     .dash-board-attribute-title {
@@ -57,12 +58,3 @@
     }
 }
 
-@media (max-width: 480px) {
-    .dash-board-attribute-value {
-        font-size: 1.2rem; /* Further reduce font size for mobile */
-    }
-
-    .dash-board-attribute-title {
-        font-size: 1rem;
-    }
-}

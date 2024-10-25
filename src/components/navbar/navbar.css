@@ -43,7 +43,7 @@
     max-width: 33%;
     flex: 1;
     justify-content: flex-end;
-    
+
 }
 
 .nav-links a {
@@ -70,7 +70,7 @@
     border-radius: 10px;
     height: fit-content;
     display: flex;
-    margin-right: 4rem;
+    /*margin-right: 4rem;*/
     cursor: pointer;
     align-self: center;
     width: fit-content;
@@ -148,6 +148,7 @@
 
 .nav-btn {
     padding: 1rem;
+    margin: auto;
     background: transparent;
     border: none;
     outline: none;
@@ -156,11 +157,6 @@
     color: #fff;
 }
 
-.nav-close-btn {
-    justify-self: start;
-    align-self: start;
-    display: inline-block;
-}
 
 @keyframes wiggle {
     0% {

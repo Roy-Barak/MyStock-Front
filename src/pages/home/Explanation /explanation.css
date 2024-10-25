@@ -23,7 +23,7 @@
 
 .explanation-number-of-user-title {
     font-family: Monospace;
-    font-size: 3rem;
+    font-size: 2.8rem;
     grid-row: 1;
     grid-column: 2;
 }
@@ -43,7 +43,7 @@
     grid-auto-rows: auto;
     gap: 1rem; /* Space between items */
     width: 100%; /* Full width */
-   
+
 
 }
 
@@ -109,13 +109,14 @@
 
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1090px) {
     .explanation-reasons {
         margin-top: 0;
     }
 
     .explanation-number-of-user-title {
         grid-row: 1;
+        justify-self: center;
     }
 
     .explanation-reason1-animation {

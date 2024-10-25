@@ -1,10 +1,10 @@
 
 .dash-board {
-    height: 100vh;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic columns */
     grid-template-rows: 51px auto;
-    background: linear-gradient(#107972, #301247);
+    background: linear-gradient(#107972, #aaaaaa);
     color: #666666;
     gap: 1rem;
 }
@@ -18,51 +18,38 @@
 
 }
 
-.dash-board-balance-cash {
-    grid-column: 1/2;
+.dash-board-attributes {
+    display: flex;
+
+    grid-column: 1/-1;
     grid-row: 3;
-    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
-.dash-board-pl {
-    grid-column: 2/3;
-    grid-row: 3;
-    align-content: center;
-}
-
-.dash-board-portfolio-performance {
-    grid-column: 3/4;
-    grid-row: 3;
-    align-content: center;
-}
-
-.dash-board-stocks-value {
-    grid-column: 4/5;
-    grid-row: 3;
-    align-content: center;
-}
-
-.dash-board-total-balance {
-    grid-column: 5/6;
-    grid-row: 3;
-    align-content: center;
+.dash-board-table-and-sell {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 4;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
 }
 
 .dash-board-stocks-table {
-    grid-column: 1/5;
-    grid-row: 4/5;
+    flex-grow: 2;
 
-    align-content: start;
+    
     justify-self: center;
-    height: 100%;
-    width: 90%;
+    min-width: fit-content;
     margin: 3rem;
 }
 
 .dash-board-buy-sell {
+
     display: flex;
-    height: 100%;
-    grid-column: 5/6;
+    flex-direction: row;
     align-content: end;
     grid-row: 4;
     justify-content: center;
@@ -71,9 +58,8 @@
 }
 
 .dash-board-buy-button, .dash-board-sell-button {
-    min-width: 40%;
-    height: 30%;
-    flex-grow: 1;
+
+    padding: 5rem;
     align-self: center;
     margin-right: 2rem;
     background: #97eb9b;
@@ -106,20 +92,7 @@
     grid-row: 5;
 }
 
-@media (max-width: 1024px) {
-    .dash-board {
-        grid-template-columns: repeat(1, 1fr); /* Shrink to 3 columns on tablets */
-    }
-}
 
-@media (max-width: 768px) {
-    .dash-board {
-        grid-template-columns: repeat(2, 1fr); /* Shrink to 2 columns on smaller tablets */
-    }
-}
+@media max-width(750px) {
 
-@media (max-width: 480px) {
-    .dash-board {
-        grid-template-columns: 1fr; /* One column on mobile devices */
-    }
 }

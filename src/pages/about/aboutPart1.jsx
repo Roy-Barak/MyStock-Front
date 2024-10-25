@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
 import StockWelcomeImage from "../../assests/images/seaBackground.jpeg";
-import profilePic from "../../assests/images/a3.png";
+import profilePic from "../../assests/images/royProfile.png";
 
 export default function AboutPart1() {
     return (

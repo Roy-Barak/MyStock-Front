@@ -38,16 +38,11 @@ export default function Navbar({user, handleUser}) {
 
     return (
         <nav className={`navbar ${menuOpen ? 'responsive_nav' : ''}`}>
-            {menuOpen && ( // Show close button only if menu is open
-                <button className="nav-btn nav-close-btn" onClick={toggleMenu}>
-                    <FaBars/>
-                </button>
-            )}
-            {!menuOpen && ( // Show menu button only if menu is closed
-                <button className="nav-btn" onClick={toggleMenu}>
-                    <FaBars/>
-                </button>
-            )}
+
+            <button className=" nav-close-btn nav-btn" onClick={toggleMenu}>
+                <FaBars/>
+            </button>
+
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
@@ -67,6 +62,7 @@ export default function Navbar({user, handleUser}) {
                     <div
                         className={`dropDown ${userDropDown ? 'active' : ''}`}
                         onClick={() => handleUserDropDown(!userDropDown)} // Toggle dropdown on click
+                        style={!menuOpen && {marginRight: '4rem'}}
 
                     >
                         {userName}
@@ -86,8 +82,13 @@ export default function Navbar({user, handleUser}) {
                         )}
                     </div>
                 ) : (
-                    <Link className="login-register-button" to="/loginAndRegister">Login /
-                        Register</Link>
+                    <Link
+                        className="login-register-button"
+                        to="/loginAndRegister"
+                        style={menuOpen ? {} : {marginRight: '4rem'}}
+                    >
+                        Login / Register
+                    </Link>
                 )}
             </div>
 

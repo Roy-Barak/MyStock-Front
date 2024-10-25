@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import Home from "./pages/home/home"
 import Navbar from "./components/navbar/navbar"
-import {Route, Routes,} from "react-router-dom";
+import {Route, Routes, useNavigate,} from "react-router-dom";
 import About from "./pages/about/about";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/footer/footer"
@@ -11,6 +11,7 @@ import Dashboard from "./pages/dashBoard/dashBoard";
 
 
 function App() {
+    const navigate = useNavigate();
     const [user, setUser] = useState(localStorage.getItem("userName"));
     const fetchUser = async () => {
         console.log("try to fetch")
@@ -46,7 +47,7 @@ function App() {
 
         // Clear the interval on component unmount
         return () => clearInterval(interval);
-    }, []);
+    },);
 
     function handleUser(user) {
         setUser(user)
