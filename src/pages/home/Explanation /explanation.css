@@ -110,6 +110,10 @@
 }
 
 @media (max-width: 1090px) {
+    .explanation {
+        padding-bottom: 4rem;
+    }
+
     .explanation-reasons {
         margin-top: 0;
     }
