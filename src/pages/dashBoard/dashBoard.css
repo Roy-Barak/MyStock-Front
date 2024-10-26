@@ -40,7 +40,7 @@
 .dash-board-stocks-table {
     flex-grow: 2;
 
-    
+
     justify-self: center;
     min-width: fit-content;
     margin: 3rem;
@@ -92,7 +92,24 @@
     grid-row: 5;
 }
 
+@media (max-width: 1400px) {
+    /* Reorder the buy/sell buttons to appear before the table */
+    .dash-board-buy-sell {
+        order: -1; /* Move the buy/sell buttons to appear first */
+        width: 100%; /* Take full width */
+        margin-bottom: 1rem; /* Adjust bottom margin */
+        justify-content: center;
+        margin-top: 2rem;
+    }
 
-@media max-width(750px) {
 
+    /* Make the buttons smaller on smaller screens */
+    .dash-board-buy-button, .dash-board-sell-button {
+        padding: 1rem; /* Reduce padding */
+        font-size: 1rem;
+        margin-right: 1rem; /* Adjust margin */
+        max-width: 40%;
+        flex: 1; /* Allow buttons to grow evenly */
+    }
 }
+

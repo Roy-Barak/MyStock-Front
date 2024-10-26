@@ -154,6 +154,7 @@ const Dashboard = ({handleUser}) => {
                 </div>
             </div>
             <div className="dash-board-table-and-sell">
+
                 <div className="dash-board-stocks-table">
                     <DashBoardStocksTable userData={userData}/>
                 </div>
@@ -161,6 +162,7 @@ const Dashboard = ({handleUser}) => {
                     <button className="dash-board-buy-button" onClick={() => handleBuy("buy")}>Buy</button>
                     <button className="dash-board-sell-button" onClick={() => handleBuy("sell")}>Sell</button>
                 </div>
+
 
             </div>
             {buyOrSell &&

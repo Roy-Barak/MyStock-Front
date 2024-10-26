@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
     border: 2px solid #717171;
     background-color: #e9e6e6;
     margin: 1rem;
     max-height: 30rem; /* Set the desired maximum height */
     overflow-y: auto;
+    overflow-x: auto;
 }
 
 .dash-board-stocks-table-tb thead {

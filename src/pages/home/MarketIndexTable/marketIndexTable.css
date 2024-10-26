@@ -27,11 +27,16 @@
 
 }
 
+.indexTable-table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
 #stockTable {
-    width: 100%;
     border-collapse: collapse;
+    width: 100%;
     border-radius: 8px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

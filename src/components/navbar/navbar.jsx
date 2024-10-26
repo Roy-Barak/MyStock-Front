@@ -43,7 +43,9 @@ export default function Navbar({user, handleUser}) {
                 <FaBars/>
             </button>
 
-            <div className="nav-links">
+            <div className="nav-links"
+                 style={menuOpen ? {marginLeft: '0'} : {}}>
+
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
@@ -62,7 +64,7 @@ export default function Navbar({user, handleUser}) {
                     <div
                         className={`dropDown ${userDropDown ? 'active' : ''}`}
                         onClick={() => handleUserDropDown(!userDropDown)} // Toggle dropdown on click
-                        style={!menuOpen && {marginRight: '4rem'}}
+                        style={menuOpen ? {} : {marginRight: '4rem'}}
 
                     >
                         {userName}

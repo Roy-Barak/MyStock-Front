@@ -41,64 +41,66 @@ export default function MarketIndexTable() {
                 </div>
                 <h2 className="indexTable-title">Market Index</h2>
             </div>
-            <table id="stockTable">
-                <thead>
-                <tr>
-                    <th>Index</th>
-                    <th>Current Value</th>
-                    <th>Previous Value</th>
-                    <th>Change %</th>
-                    <th>Day Low</th>
-                    <th>Day High</th>
-                    <th>52 Week Low</th>
-                    <th>52 Week High</th>
-                    <th>Average Volume</th>
-                </tr>
-                </thead>
-                <tbody>
-                {indicesData.map((data, index) => {
-                    if (data) {
-                        const currentPrice = data[1].price // Use optional chaining
-                        const previousClose = data[1].previousClose;
-                        const changePercent = ((currentPrice / previousClose - 1) * 100).toFixed(2);
+            <div className="indexTable-table-wrapper">
+                <table id="stockTable">
+                    <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Current Value</th>
+                        <th>Previous Value</th>
+                        <th>Change %</th>
+                        <th>Day Low</th>
+                        <th>Day High</th>
+                        <th>52 Week Low</th>
+                        <th>52 Week High</th>
+                        <th>Average Volume</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {indicesData.map((data, index) => {
+                        if (data) {
+                            const currentPrice = data[1].price // Use optional chaining
+                            const previousClose = data[1].previousClose;
+                            const changePercent = ((currentPrice / previousClose - 1) * 100).toFixed(2);
 
-                        return (
-                            <tr key={index}>
-                                <td>{data[1].name}</td>
-                                <td>{currentPrice}</td>
-                                <td>{previousClose}</td>
-                                <td style={{color: changePercent >= 0 ? '#28a745' : 'red'}}>
-                                    {changePercent}%
-                                </td>
-                                <td>{data[1]?.dayLow?.toLocaleString(undefined, {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2
-                                }) || "N/A"}</td>
-                                <td>{data[1]?.dayHigh?.toLocaleString(undefined, {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2
-                                }) || "N/A"}</td>
-                                <td>{data[1]?.fiftyTwoWeekLow?.toLocaleString(undefined, {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2
-                                }) || "N/A"}</td>
-                                <td>{data[1]?.fiftyTwoWeekHigh?.toLocaleString(undefined, {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2
-                                }) || "N/A"}</td>
-                                <td>{data[1]?.averageVolume?.toLocaleString() || "N/A"}</td>
-                            </tr>
-                        );
-                    } else {
-                        return (
-                            <tr key={index}>
-                                <td colSpan="9"><LinearProgress/></td>
-                            </tr>
-                        );
-                    }
-                })}
-                </tbody>
-            </table>
+                            return (
+                                <tr key={index}>
+                                    <td>{data[1].name}</td>
+                                    <td>{currentPrice}</td>
+                                    <td>{previousClose}</td>
+                                    <td style={{color: changePercent >= 0 ? '#28a745' : 'red'}}>
+                                        {changePercent}%
+                                    </td>
+                                    <td>{data[1]?.dayLow?.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) || "N/A"}</td>
+                                    <td>{data[1]?.dayHigh?.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) || "N/A"}</td>
+                                    <td>{data[1]?.fiftyTwoWeekLow?.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) || "N/A"}</td>
+                                    <td>{data[1]?.fiftyTwoWeekHigh?.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) || "N/A"}</td>
+                                    <td>{data[1]?.averageVolume?.toLocaleString() || "N/A"}</td>
+                                </tr>
+                            );
+                        } else {
+                            return (
+                                <tr key={index}>
+                                    <td colSpan="9"><LinearProgress/></td>
+                                </tr>
+                            );
+                        }
+                    })}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
