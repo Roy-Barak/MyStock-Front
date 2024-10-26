@@ -1,4 +1,3 @@
-// src/components/MarketIndexTable.js
 import React, {useEffect, useState} from 'react';
 import './marketIndexTable.css';
 import {LinearProgress} from "@mui/joy";
@@ -9,18 +8,32 @@ export default function MarketIndexTable() {
 
     useEffect(() => {
         const fetchIndicesData = async () => {
-            const indices = ["%5EGSPC", "%5EDJI", "^NYA", "^OEX", "%5EIXIC", "%5EFTSE", "%5EGDAXI", "%5EFCHI"];
+            const indices = [
+                "%5EGSPC", // S&P 500
+                "%5EDJI",  // Dow Jones Industrial Average
+                "^NYA",    // NYSE Composite
+                "^OEX",    // S&P 100
+                "%5EIXIC", // NASDAQ Composite
+                "%5EFTSE", // FTSE 100
+                "%5EGDAXI", // DAX
+                "%5EFCHI", // CAC 40
+                "%5EIBEX", // IBEX 35
+                "%5EOMX",  // OMX Stockholm 30
+                "%5EHSI",  // Hang Seng Index
+                "%5EJKSE", // Jakarta Composite
+                "%5ETWII", // Taiwan Weighted
+            ];
             const fetchedData = await Promise.all(indices.map(index => fetchStockDate(index)));
             setIndicesData(fetchedData);
+            console.log(fetchedData);
         };
 
         fetchIndicesData();
     }, []);
 
-
     return (
-        <div id="spUpdates">
-            <h2>Market Index</h2>
+        <div className="indexTable">
+            <h2 className="indexTable-title">Market Index</h2>
             <table id="stockTable">
                 <thead>
                 <tr>
@@ -28,26 +41,51 @@ export default function MarketIndexTable() {
                     <th>Current Value</th>
                     <th>Previous Value</th>
                     <th>Change %</th>
+                    <th>Day Low</th>
+                    <th>Day High</th>
+                    <th>52 Week Low</th>
+                    <th>52 Week High</th>
+                    <th>Average Volume</th>
                 </tr>
                 </thead>
                 <tbody>
                 {indicesData.map((data, index) => {
                     if (data) {
-                        const changePercent = ((data[1].price / data[1].prevValue - 1) * 100).toFixed(2);
+                        const currentPrice = data[1].price // Use optional chaining
+                        const previousClose = data[1].previousClose;
+                        const changePercent = ((currentPrice / previousClose - 1) * 100).toFixed(2);
+
                         return (
                             <tr key={index}>
                                 <td>{data[1].name}</td>
-                                <td>{data[1].price}</td>
-                                <td>{data[1].prevValue}</td>
-                                <td style={{color: changePercent >= 0 ? 'green' : 'red'}}>
+                                <td>{currentPrice}</td>
+                                <td>{previousClose}</td>
+                                <td style={{color: changePercent >= 0 ? '#28a745' : 'red'}}>
                                     {changePercent}%
                                 </td>
+                                <td>{data[1]?.dayLow?.toLocaleString(undefined, {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) || "N/A"}</td>
+                                <td>{data[1]?.dayHigh?.toLocaleString(undefined, {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) || "N/A"}</td>
+                                <td>{data[1]?.fiftyTwoWeekLow?.toLocaleString(undefined, {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) || "N/A"}</td>
+                                <td>{data[1]?.fiftyTwoWeekHigh?.toLocaleString(undefined, {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) || "N/A"}</td>
+                                <td>{data[1]?.averageVolume?.toLocaleString() || "N/A"}</td>
                             </tr>
                         );
                     } else {
                         return (
                             <tr key={index}>
-                                <td colSpan="4"><LinearProgress/></td>
+                                <td colSpan="9"><LinearProgress/></td>
                             </tr>
                         );
                     }
@@ -55,8 +93,5 @@ export default function MarketIndexTable() {
                 </tbody>
             </table>
         </div>
-
     );
-};
-
-
+}

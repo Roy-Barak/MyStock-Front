@@ -9,6 +9,7 @@ async function fetchStockDate(symbol) {
         if (!fetchResponse.ok) {
             throw new Error(stockData.error || 'Failed to fetch stock data');
         }
+        const price = stockData[1].bid || stockData[1].previousClose;
 
         return (
             //return array for two users first for stockTab and the second for StockTable
@@ -19,9 +20,14 @@ async function fetchStockDate(symbol) {
                     name: stockData[0].name
                 },
                 {
-                    price: stockData[1].bid,
-                    prevValue: stockData[0].previous_close,
-                    name: stockData[0].name
+                    name: stockData[0].name,
+                    price: price,
+                    previousClose: stockData[1]?.previousClose,
+                    dayLow: stockData[1]?.dayLow,
+                    dayHigh: stockData[1]?.dayHigh,
+                    fiftyTwoWeekLow: stockData[1]?.fiftyTwoWeekLow,
+                    fiftyTwoWeekHigh: stockData[1]?.fiftyTwoWeekHigh,
+                    averageVolume: stockData[1]?.averageVolume,
                 }
             ])
             ;

@@ -1,9 +1,15 @@
 /* marketIndexTable.css */
 
-#spUpdates {
+.indexTable {
     text-align: center;
-    margin: 50px auto;
+    padding-top: 1rem;
     background: #555252;
+}
+
+.indexTable-title {
+    font-family: Monospace;
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
 #stockTable {
