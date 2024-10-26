@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './marketIndexTable.css';
 import {LinearProgress} from "@mui/joy";
-import fetchStockDate from "../../../components/Symbol/symbolData"; // Import CSS for MarketIndexTable styles
+import fetchStockDate from "../../../components/Symbol/symbolData";
+import Lottie from "lottie-react"; // Import CSS for MarketIndexTable styles
+import coinAnimation from "../../../assests/animation/coinAnimation2.json"
 
 export default function MarketIndexTable() {
     const [indicesData, setIndicesData] = useState([]);
@@ -33,7 +35,12 @@ export default function MarketIndexTable() {
 
     return (
         <div className="indexTable">
-            <h2 className="indexTable-title">Market Index</h2>
+            <div className="indexTable-firstDiv">
+                <div className="indexTable-firstDiv-animation">
+                    <Lottie animationData={coinAnimation}/>
+                </div>
+                <h2 className="indexTable-title">Market Index</h2>
+            </div>
             <table id="stockTable">
                 <thead>
                 <tr>

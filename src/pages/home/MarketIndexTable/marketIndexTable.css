@@ -6,10 +6,25 @@
     background: #555252;
 }
 
+.indexTable-firstDiv {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    flex: 1;
+    justify-content: center;
+}
+
+.indexTable-firstDiv-animation {
+    max-width: 10%;
+
+}
+
 .indexTable-title {
     font-family: Monospace;
     font-size: 3rem;
     margin-bottom: 3rem;
+
 }
 
 #stockTable {
