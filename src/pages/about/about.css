@@ -116,6 +116,8 @@
     .about-container-information {
         grid-template-columns: 1fr; /* Change to a single column */
         text-align: center;
+        min-width: fit-content;
+
     }
 
     .profile-img {
@@ -133,7 +135,7 @@
     .about-container-roy-p {
         grid-row: 3;
         grid-column: 1 / -1; /* Make text span full width */
-        max-width: 100%;
+        max-width: 80%;
         font-size: 1.2rem;
     }
 

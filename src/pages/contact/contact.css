@@ -1,6 +1,7 @@
 .about-container-title {
     grid-row: 1;
     grid-column: 2/4;
+
 }
 
 
@@ -81,8 +82,10 @@
 @media (max-width: 1400px) {
     .contact-container-information {
         grid-template-columns: 1fr; /* Switch to a single column layout */
-        margin-bottom: 3rem;
         min-width: fit-content;
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+        gap: 0;
     }
 
     .profile-img-about {
@@ -102,6 +105,7 @@
         grid-column: 1 / -1; /* Make email span full width */
         justify-self: center;
         margin-right: 0;
+
     }
 
     .contact-container-phone {
@@ -122,7 +126,7 @@
 /* Further size adjustments for screens between 1300px and 700px */
 @media (max-width: 1300px) and (min-width: 700px) {
     .profile-img-about {
-        max-width: 40%; /* Slightly reduce profile image size */
+        max-width: 20%; /* Slightly reduce profile image size */
     }
 }
 
@@ -130,10 +134,11 @@
 @media (max-width: 700px) {
     .contact-container-information {
         grid-template-columns: 1fr; /* Single column layout */
+        
     }
 
     .profile-img-about {
-        max-width: 60%; /* Further reduce image size */
+        max-width: 50%; /* Further reduce image size */
         margin: 0 auto;
     }
 

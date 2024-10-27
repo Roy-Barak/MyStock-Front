@@ -1,6 +1,6 @@
 import React from 'react';
 import "./welcome.css"
-import WelcomeImg from "../../../assests/images/homePageBackgroundImg.webp"
+import WelcomeImg from "../../../assests/images/homePageImg.webp"
 
 const welcome = () => {
     return (

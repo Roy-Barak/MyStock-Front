@@ -39,7 +39,7 @@ export default function Navbar({user, handleUser}) {
     return (
         <nav className={`navbar ${menuOpen ? 'responsive_nav' : ''}`}>
 
-            <button className=" nav-close-btn nav-btn" onClick={toggleMenu}>
+            <button className="nav-btn" onClick={toggleMenu}>
                 <FaBars/>
             </button>
 
@@ -92,7 +92,7 @@ export default function Navbar({user, handleUser}) {
                         to="/loginAndRegister"
                         style={menuOpen ? {} : {marginRight: '4rem'}}
                     >
-                        Login / Register
+                        {!menuOpen ? " Login / Register" : "Login"}
                     </Link>
                 )}
             </div>
