@@ -22,6 +22,7 @@
 .contact-container-information {
 
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    text-align: center;
 
 
 }
@@ -81,6 +82,7 @@
     .contact-container-information {
         grid-template-columns: 1fr; /* Switch to a single column layout */
         margin-bottom: 3rem;
+        min-width: fit-content;
     }
 
     .profile-img-about {

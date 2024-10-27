@@ -72,3 +72,28 @@
     background: #fff;
 }
 
+@media (max-width: 1000px) {
+    .card {
+        width: 8rem;
+        height: 10rem;
+        margin-right: 0rem;
+        font-size: 1.4rem;
+    }
+
+    .card-back {
+        font-size: 1rem;
+    }
+
+    .card-search-title {
+        font-size: 1.4rem;
+    }
+
+    .card-search {
+        width: 20rem;
+        height: 15rem;
+    }
+
+    .card-search-input, .card-search-button {
+        font-size: 1rem;
+    }
+}

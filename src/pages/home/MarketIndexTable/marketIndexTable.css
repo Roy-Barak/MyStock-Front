@@ -17,14 +17,13 @@
 
 .indexTable-firstDiv-animation {
     max-width: 10%;
-
+    align-self: center;
 }
 
 .indexTable-title {
     font-family: Monospace;
     font-size: 3rem;
     margin-bottom: 3rem;
-
 }
 
 .indexTable-table-wrapper {
@@ -61,4 +60,11 @@
 
 #stockTable tbody tr:last-child {
     border-bottom: none;
+}
+
+@media (max-width: 1000px) {
+    .indexTable-title {
+        font-size: 1.8rem;
+        margin: 2rem;
+    }
 }

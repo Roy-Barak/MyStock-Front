@@ -52,9 +52,12 @@ export default function Navbar({user, handleUser}) {
             </div>
 
             {!menuOpen && <div className="navbar-mystock-text">
+
                 <p>
-                    -Your personal stock portfolio management tool-
+                    -MyStock-
+
                 </p>
+
             </div>}
             <div className="login">
                 {!menuOpen && <div className="navbar-coin-animation">

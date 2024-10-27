@@ -32,3 +32,13 @@
     grid-column: 1/-1;
     font-size: 2rem;
 }
+
+@media (max-width: 1000px) {
+    .welcome-contanier-p {
+        font-size: 1.5rem;
+    }
+
+    .welcome-contanier-information {
+        margin: 0;
+    }
+}
