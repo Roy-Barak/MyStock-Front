@@ -4,6 +4,13 @@ body {
     color: white;
     font-family: Arial, sans-serif;
 
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+
 }
 
 

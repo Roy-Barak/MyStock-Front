@@ -6,13 +6,15 @@
     align-items: center;
     font-size: 1.2rem;
     font-family: Monospace;
-    
+    flex-wrap: wrap;
+
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
     flex-grow: 1;
+
 }
 
 .footer-links a {
@@ -28,12 +30,10 @@
 }
 
 .credit-symbol {
-    position: absolute;
     color: black;
-    right: 2rem;
     background: #b9b9b9;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-
-
+    text-align: center;
+    margin: auto;
 }
