@@ -1,33 +1,35 @@
 .img-div {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
 }
 
 .login-img {
-    position: absolute;
-    width: 100%;
+    position: fixed; /* Keeps it fixed while scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    object-fit: cover; /* Ensures the image fills without distortion */
     opacity: 0.8;
     z-index: -1;
 }
 
-
 #login {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     align-content: center;
     align-self: center;
-    width: 100%;
-    top: 100px;
-    margin: 2rem auto;
-    padding: 3rem 6rem;
-    max-width: 25rem;
+    margin: auto;
+    padding: 2rem 8rem;
     text-align: center;
     border-radius: 6px;
     background: linear-gradient(#107972, #301247);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-
+    z-index: 1; /* Ensures the login form is above the background */
 }
 
 #login h1 {
@@ -51,8 +53,9 @@
 }
 
 #login input {
+
     display: block;
-    width: 100%;
+    width: fit-content;
     padding: 0.5rem;
     margin-bottom: 2rem;
     border-radius: 4px;
@@ -98,8 +101,8 @@
 #actions {
 
     display: flex;
-    justify-content: space-between;
     margin-top: 1rem;
+    gap: 2rem;
 }
 
 #actions button {
