@@ -1,7 +1,7 @@
 .img-div {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 95vh;
     overflow: hidden; /* Ensures no scrolling issues with absolute positioning */
 }
 
@@ -17,6 +17,7 @@
 }
 
 #login {
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,7 +53,7 @@
 #login input {
 
     display: block;
-    width: fit-content;
+    min-width: 100%;
     padding: 0.5rem;
     margin-bottom: 2rem;
     border-radius: 4px;
@@ -122,6 +123,34 @@
     cursor: pointer;
 }
 
+@media (max-width: 1000px) {
+    #login {
+        padding: 0.5rem 3rem;
+
+    }
+
+    #actions button {
+        padding: 0.5rem;
+    }
+
+    #login h1 {
+        font-size: 1.4rem;
+    }
+
+    #login label {
+        font-size: 0.8rem;
+    }
+
+    #login input {
+        padding: 0.2rem;
+    }
+
+    #actions button {
+        padding: 0.2rem 0.3rem;
+        font-size: 1rem;
+
+    }
+}
 
 #login button:hover {
     background: #6c1fd6;

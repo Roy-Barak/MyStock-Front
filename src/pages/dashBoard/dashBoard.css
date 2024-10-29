@@ -1,6 +1,6 @@
 
 .dash-board {
-
+    min-height: 95vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic columns */
     grid-template-rows: 51px auto;
@@ -39,7 +39,6 @@
 
 .dash-board-stocks-table {
     flex-grow: 2;
-
 
     justify-self: center;
     min-width: fit-content;

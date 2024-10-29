@@ -7,7 +7,7 @@
 
 .about-container-part2 {
     background: #718386;
-    
+
 }
 
 .about-container-information2-img {
@@ -80,4 +80,20 @@
     list-style-type: disc;
     margin-left: 2rem;
     line-height: 1.6;
+    
+}
+
+
+@media (max-width: 1470px ) {
+    .about-container-part2 {
+        font-size: 1.1rem;
+    }
+
+    .about-section {
+        font-size: 1rem;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+    }
 }

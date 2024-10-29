@@ -29,7 +29,7 @@ export default function LoginPage({handleSwitch, handleUser}) {
         // // Wait for 3 seconds
         // await delay(3000); // Wait for 3 seconds
         try {
-            const response = await fetch("http://127.0.0.1:5000/user-login", {
+            const response = await fetch("https://mystock-backend.vercel.app/user-login", {
                 method: 'POST',
                 body: JSON.stringify(userInput),
                 headers: {'Content-Type': 'application/json'},

@@ -1,6 +1,6 @@
 async function fetchStockDate(symbol) {
     // Flask API endpoint
-    const API_ENDPOINT = `http://127.0.0.1:5000/get/stock/${symbol}`;
+    const API_ENDPOINT = `https://mystock-backend.vercel.app/get/stock/${symbol}`;
 
     try {
         const fetchResponse = await fetch(API_ENDPOINT);

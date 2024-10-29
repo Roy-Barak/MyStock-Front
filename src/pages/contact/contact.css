@@ -1,3 +1,7 @@
+.contact-container {
+
+}
+
 .about-container-title {
     grid-row: 1;
     grid-column: 2/4;
@@ -134,7 +138,8 @@
 @media (max-width: 700px) {
     .contact-container-information {
         grid-template-columns: 1fr; /* Single column layout */
-        
+        margin-top: 2rem;
+
     }
 
     .profile-img-about {

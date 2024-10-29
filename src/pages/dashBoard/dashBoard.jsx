@@ -21,7 +21,7 @@ const Dashboard = ({handleUser}) => {
             "stocks": {}
         })
         try {
-            const response = await fetch("http://127.0.0.1:5000/user/data", {
+            const response = await fetch("https://mystock-backend.vercel.app/user/data", {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ const Dashboard = ({handleUser}) => {
 
     async function buy(symbol, shares) {
         try {
-            const response = await fetch("http://127.0.0.1:5000/user/buy-stock", {
+            const response = await fetch("https://mystock-backend.vercel.app/user/buy-stock", {
                 method: 'POST',
                 body: JSON.stringify({
                     "symbol": symbol,
@@ -79,7 +79,7 @@ const Dashboard = ({handleUser}) => {
 
     async function sell(symbol, shares) {
         try {
-            const response = await fetch("http://127.0.0.1:5000/user/sell-stock", {
+            const response = await fetch("https://mystock-backend.vercel.app/user/sell-stock", {
                 method: 'POST',
                 body: JSON.stringify({
                     "symbol": symbol,

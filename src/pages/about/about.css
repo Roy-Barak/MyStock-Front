@@ -113,10 +113,23 @@
 
 /* Media query for screens smaller than 1350px */
 @media (max-width: 1470px) {
+    .scroll-down-indicator {
+        font-size: 1rem;
+    }
+
+    .arrow-down {
+        width: 15px;
+        height: 15px;
+
+    }
+
     .about-container-information {
         grid-template-columns: 1fr; /* Change to a single column */
         text-align: center;
         min-width: fit-content;
+        gap: 0;
+        row-gap: 1rem;
+        margin-top: 3rem;
 
     }
 
@@ -129,14 +142,14 @@
     .about-container-hello {
         grid-row: 2;
         grid-column: 1 / -1; /* Make hello message span full width */
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .about-container-roy-p {
         grid-row: 3;
         grid-column: 1 / -1; /* Make text span full width */
         max-width: 80%;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .scroll-down-indicator {
@@ -144,6 +157,7 @@
         grid-column: 1 / -1; /* Make the scroll indicator span full width */
         margin-top: 1rem;
     }
+
 }
 
 @keyframes fade-out {
