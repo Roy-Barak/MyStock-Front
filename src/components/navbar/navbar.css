@@ -170,7 +170,7 @@
 
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 89rem) {
     .nav-btn {
         visibility: visible;
         opacity: 1;
