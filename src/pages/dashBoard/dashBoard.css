@@ -92,23 +92,22 @@
 }
 
 @media (max-width: 1400px) {
-    /* Reorder the buy/sell buttons to appear before the table */
+
     .dash-board-buy-sell {
-        order: -1; /* Move the buy/sell buttons to appear first */
-        width: 100%; /* Take full width */
-        margin-bottom: 1rem; /* Adjust bottom margin */
+        order: -1;
+        width: 100%;
+        margin-bottom: 1rem;
         justify-content: center;
         margin-top: 2rem;
     }
 
 
-    /* Make the buttons smaller on smaller screens */
     .dash-board-buy-button, .dash-board-sell-button {
-        padding: 1rem; /* Reduce padding */
+        padding: 1rem;
         font-size: 1rem;
-        margin-right: 1rem; /* Adjust margin */
+        margin-right: 1rem;
         max-width: 40%;
-        flex: 1; /* Allow buttons to grow evenly */
+        flex: 1;
     }
 }
 
