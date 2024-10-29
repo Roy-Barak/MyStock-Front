@@ -109,5 +109,24 @@
         max-width: 40%;
         flex: 1;
     }
+
+    .dash-board-stocks-table {
+        flex-grow: 1;
+        max-width: 80%; /* Limits the table width */
+        margin: 1rem;
+    }
+
+    .dash-board-attributes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .dash-board-attributes > * {
+        flex: 1 1 calc(50% - 1rem); /* Ensures two items per row */
+        max-width: 45%;
+    }
 }
 

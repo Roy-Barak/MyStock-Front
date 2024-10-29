@@ -2,7 +2,7 @@ import React from "react";
 import './dashBoardAttribute.css'
 
 export default function DashBoardAttribute({title, value, value2, userData}) {
-    const valueStyle = (title === "P&L Daily" || title === "Portfolio Performance")
+    const valueStyle = (title === "P&L Daily" || title === "Performance")
         ? {color: parseInt(value) >= 0 ? "#28a745" : '#dc3545'}
         : {};
     console.log(value)

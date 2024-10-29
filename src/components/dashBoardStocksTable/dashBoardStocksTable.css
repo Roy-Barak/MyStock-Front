@@ -10,6 +10,7 @@
     max-height: 30rem; /* Set the desired maximum height */
     overflow-y: auto;
     overflow-x: auto;
+    padding: 0;
 }
 
 .dash-board-stocks-table-tb thead {
@@ -27,7 +28,7 @@
     padding: 0.5rem;
     font-size: 1.2rem;
     color: white;
-    border: 1px solid #717171; /* Optional: Add border to header cells */
+    border: 1px solid #717171;
 }
 
 .dash-board-stocks-table-tb-body td {
@@ -68,3 +69,10 @@
     }
 }
 
+@media (max-width: 1400px) {
+    .dash-board-stocks-table-main-div {
+        max-width: 60%;
+        margin: 0 auto;
+        
+    }
+}

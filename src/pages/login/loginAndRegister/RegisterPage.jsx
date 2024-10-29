@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Lottie from "lottie-react";
 import loginLoading from "../../../assests/animation/walletLoading.json";
+import backEndUrl from "../../../config";
 
 export default function RegisterPage({handleSwitch, handleUser}) {
     const [userInput, setUserInput] = useState({
@@ -52,7 +53,7 @@ export default function RegisterPage({handleSwitch, handleUser}) {
         // Wait for 3 seconds
         await delay(3000); // Wait for 3 seconds
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user-register", {
+            const response = await fetch(`${backEndUrl}/user-register`, {
                 method: 'POST',
                 body: JSON.stringify({
                     "name": userInput.name,

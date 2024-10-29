@@ -4,7 +4,7 @@ import "./dashBoard.css"
 import DashBoardAttribute from "../../components/dashBoardAttribute /dashBoardAttribute";
 import DashBoardStocksTable from "../../components/dashBoardStocksTable/dashBoardStocksTable";
 import {BuyAndSell} from "../../components/buyAndSell/buyAndSell";
-
+import backEndUrl from "../../config"
 
 const Dashboard = ({handleUser}) => {
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Dashboard = ({handleUser}) => {
             "stocks": {}
         })
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user/data", {
+            const response = await fetch(`${backEndUrl}/user/data`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ const Dashboard = ({handleUser}) => {
 
     async function buy(symbol, shares) {
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user/buy-stock", {
+            const response = await fetch(`${backEndUrl}/user/buy-stock`, {
                 method: 'POST',
                 body: JSON.stringify({
                     "symbol": symbol,
@@ -65,7 +65,7 @@ const Dashboard = ({handleUser}) => {
                 const data = await response.json();
                 setUserData(data)
                 fetchUserData()
-                // localStorage.setItem("userData", JSON.stringify(data)); // Update localStorage
+
 
             } else {
                 console.log(response.status)
@@ -79,7 +79,7 @@ const Dashboard = ({handleUser}) => {
 
     async function sell(symbol, shares) {
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user/sell-stock", {
+            const response = await fetch(`${backEndUrl}/user/sell-stock`, {
                 method: 'POST',
                 body: JSON.stringify({
                     "symbol": symbol,
@@ -138,14 +138,14 @@ const Dashboard = ({handleUser}) => {
                 <div className="dash-board-pl">
                     <DashBoardAttribute title="P&L Daily" userData={userData} value={
                         (100 * (currentPortfolioValue - previousPortfolioValue) / previousPortfolioValue).toFixed(2)
-                        + "%"} value2={pAndL.toFixed(2)}/>
+                        + "%"}/>
                 </div>
                 <div className="dash-board-stocks-value">
                     <DashBoardAttribute title="Portfilo Value" userData={userData}
                                         value={stocksValue.toFixed(0) + "$"}/>
                 </div>
                 <div className="dash-board-portfolio-performance">
-                    <DashBoardAttribute userData={userData} title="Portfolio Performance"
+                    <DashBoardAttribute userData={userData} title="Performance"
                                         value={Math.floor(userData.balance + stocksValue - 10000) + "$"}/>
                 </div>
                 <div className="dash-board-total-balance">

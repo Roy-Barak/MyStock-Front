@@ -48,13 +48,29 @@
     font-weight: bold;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
+    .dash-board-attribute {
+        padding: 0.5rem;
+        min-width: 0;
+    }
+
     .dash-board-attribute-value {
-        font-size: 1.6rem; /* Smaller font for smaller screens */
+        font-size: 1.3rem; /* Smaller font for smaller screens */
     }
 
     .dash-board-attribute-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
+
 }
+
+/*@media (max-width: 900px) {*/
+/*    .dash-board-attribute-value {*/
+/*        font-size: 1.6rem; !* Smaller font for smaller screens *!*/
+/*    }*/
+
+/*    .dash-board-attribute-title {*/
+/*        font-size: 1.1rem;*/
+/*    }*/
+/*}*/
 

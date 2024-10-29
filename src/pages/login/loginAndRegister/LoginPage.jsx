@@ -5,6 +5,8 @@ import StockWelcomeImage from "../../../assests/images/StockWelcome.png";
 import {useNavigate} from "react-router-dom";
 import loginLoading from "../../../assests/animation/walletLoading.json"
 import Lottie from "lottie-react";
+import backEndUrl from "../../../config";
+
 
 export default function LoginPage({handleSwitch, handleUser}) {
     const [userInput, setUserInput] = useState({
@@ -29,7 +31,7 @@ export default function LoginPage({handleSwitch, handleUser}) {
         // // Wait for 3 seconds
         // await delay(3000); // Wait for 3 seconds
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user-login", {
+            const response = await fetch(`${backEndUrl}/user-login`, {
                 method: 'POST',
                 body: JSON.stringify(userInput),
                 headers: {'Content-Type': 'application/json'},

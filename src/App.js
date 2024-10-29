@@ -16,7 +16,7 @@ function App() {
     const fetchUser = async () => {
         console.log("try to fetch")
         try {
-            const response = await fetch("https://mystock-backend.vercel.app/user/data", {
+            const response = await fetch("${backEndUrl}/user/data", {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
