@@ -19,13 +19,13 @@
 
 }
 
-@supports (animation-timeline: view()) {
-    .welcome-contanier-information {
-        animation: fade-out linear forwards;
-        animation-timeline: view(200px);
-        animation-range: exit;
-    }
-}
+/*@supports (animation-timeline: view()) {*/
+/*    .welcome-contanier-information {*/
+/*        animation: fade-out linear forwards;*/
+/*        animation-timeline: view(200px);*/
+/*        animation-range: exit;*/
+/*    }*/
+/*}*/
 
 .welcome-contanier-p {
     grid-row: 1/-1;

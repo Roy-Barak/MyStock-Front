@@ -12,19 +12,19 @@
 }
 
 
-@supports (animation-timeline: view()) {
-    .about-container-img {
-        animation: fade-out-img;
-        animation-timeline: view();
-        animation-range: exit;
-    }
+/*@supports (animation-timeline: view()) {*/
+/*    .about-container-img {*/
+/*        animation: fade-out-img;*/
+/*        animation-timeline: view();*/
+/*        animation-range: exit;*/
+/*    }*/
 
-    .about-container-information, .about-container-information2, .contact-container-information {
-        animation: fade-out linear forwards;
-        animation-timeline: view(200px);
-        animation-range: exit;
-    }
-}
+/*    .about-container-information, .about-container-information2, .contact-container-information {*/
+/*        animation: fade-out linear forwards;*/
+/*        animation-timeline: view(200px);*/
+/*        animation-range: exit;*/
+/*    }*/
+/*}*/
 
 .about-container-information, .about-container-information2, .contact-container-information {
     margin-top: 51px;
