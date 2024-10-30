@@ -14,6 +14,7 @@
     object-fit: cover;
     opacity: 0.8;
     z-index: -10;
+    filter: blur(4px);
 }
 
 #login {
@@ -25,18 +26,20 @@
     padding: 2rem 8rem;
     text-align: center;
     border-radius: 6px;
-    background: linear-gradient(#107972, #301247);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1); /* Translucent background */
+    backdrop-filter: blur(5px); /* Adds a frosted glass effect */
     z-index: 1;
 }
 
 #login h1 {
+    color: #e5e5e5;
     letter-spacing: 0.1rem;
     font-size: 1.8rem;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    margin-bottom: 2rem;
-    color: #c7a0ee;
+    margin-bottom: 1.5rem;
+
 }
 
 #login label {
@@ -47,7 +50,7 @@
     letter-spacing: 0.1rem;
     font-weight: 700;
     text-align: left;
-    color: #9f80bf;
+    color: #d4c7de;
 }
 
 #login input {
@@ -56,10 +59,11 @@
     min-width: 100%;
     padding: 0.5rem;
     margin-bottom: 2rem;
-    border-radius: 4px;
-    border: 1px solid #493066;
-    background: #493664;
-    color: #e5d9f1;
+    border-radius: 10px;
+    border: 0.08rem solid #c6c6cb;
+    background: rgba(255, 255, 255, 0.1); /* Translucent background */
+    /*backdrop-filter: blur(0px);*/
+    color: #f1f1f1;
     font-size: 1.3rem;
     font-family: 'Raleway', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -71,7 +75,7 @@
 }
 
 .field-not-valid {
-    color: #e36c6c;
+    color: #e04e4e;
     font-size: 1rem;
     display: block;
     text-transform: uppercase;
@@ -113,9 +117,10 @@
     padding: 0.5rem 1.5rem;
     margin-bottom: 1rem;
     border-radius: 4px;
-    border: 1px solid #5812b9;
-    background: #5812b9;
-    color: #e5d9f1;
+    border: 1px solid #d4c7de;
+    background: rgba(255, 255, 255, 0.1); /* Translucent background */
+    backdrop-filter: blur(2px);
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
@@ -125,8 +130,8 @@
 
 @media (max-width: 1000px) {
     #login {
-        padding: 0.5rem 6rem;
-        min-width: 70%;
+        padding: 0.5rem 2rem;
+        /*min-width: 70%;*/
 
     }
 
@@ -151,8 +156,12 @@
         font-size: 1rem;
 
     }
+
+    .field-not-valid {
+        font-size: 0.9rem;
+    }
 }
 
 #login button:hover {
-    background: #6c1fd6;
+    background: #bab3c7;
 }

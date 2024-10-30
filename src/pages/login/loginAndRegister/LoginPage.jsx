@@ -1,7 +1,7 @@
 // src/components/LoginPage.js
 import React, {useState} from 'react';
 import './LoginPage.css';
-import StockWelcomeImage from "../../../assests/images/StockWelcome.png";
+import StockWelcomeImage from "../../../assests/images/BackgroundForLogin.webp";
 import {useNavigate} from "react-router-dom";
 import loginLoading from "../../../assests/animation/walletLoading.json"
 import Lottie from "lottie-react";

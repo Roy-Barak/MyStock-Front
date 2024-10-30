@@ -1,4 +1,4 @@
-import StockWelcomeImage from "../../../assests/images/StockWelcome.png";
+import StockWelcomeImage from "../../../assests/images/BackgroundForLogin.webp";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Lottie from "lottie-react";
