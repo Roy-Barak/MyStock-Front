@@ -1,7 +1,6 @@
 // src/components/LoginPage.js
 import React, {useState} from 'react';
 import './LoginPage.css';
-import StockWelcomeImage from "../../../assests/images/BackgroundForLogin.webp";
 import {useNavigate} from "react-router-dom";
 import loginLoading from "../../../assests/animation/walletLoading.json"
 import Lottie from "lottie-react";
@@ -76,52 +75,51 @@ export default function LoginPage({handleSwitch, handleUser}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="img-div">
-                <img className="login-img" src={StockWelcomeImage} alt=""/>
-                <div id="login">
-                    {loading ? (
-                        <div className="login-loading">
-                            <Lottie animationData={loginLoading} loop={true}/>
-                        </div>
-                    ) : (
-                        <>
-                            <h1>Login</h1>
-                            <p>
-                                <label>Email</label>
-                                <input
-                                    className={emailNotValid ? "input-argument-not-valid" : ""}
-                                    type="email"
-                                    required
-                                    onBlur={(event) => handleUserInput('email', event.target.value)}
-                                />
-                            </p>
-                            {emailNotValid && (
-                                <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}>
-                                    <p>Email not valid</p>
-                                </div>
-                            )}
-                            <p>
-                                <label>Password</label>
-                                <input
-                                    type="password"
-                                    onBlur={(event) => handleUserInput('password', event.target.value)}
-                                />
-                            </p>
-                            {noExitingUser && (
-                                <div className="field-not-valid">
-                                    <p>Incorrect email or password. Please try again</p>
-                                </div>
-                            )}
-                            <p id="actions">
-                                <button type="button" className='LoginOrRegister' onClick={handleSwitch}>
-                                    Create New User
-                                </button>
-                                <button className='LoginOrRegister'>Login</button>
-                            </p>
-                        </>
-                    )}
-                </div>
+
+            <div id="login">
+                {loading ? (
+                    <div className="login-loading">
+                        <Lottie animationData={loginLoading} loop={true}/>
+                    </div>
+                ) : (
+                    <>
+                        <h1>Login</h1>
+                        <p>
+                            <label>Email</label>
+                            <input
+                                className={emailNotValid ? "input-argument-not-valid" : ""}
+                                type="email"
+                                required
+                                onBlur={(event) => handleUserInput('email', event.target.value)}
+                            />
+                        </p>
+                        {emailNotValid && (
+                            <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}>
+                                <p>Email not valid</p>
+                            </div>
+                        )}
+                        <p>
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                onBlur={(event) => handleUserInput('password', event.target.value)}
+                            />
+                        </p>
+                        {noExitingUser && (
+                            <div className="field-not-valid">
+                                <p>Incorrect email or password. Please try again</p>
+                            </div>
+                        )}
+                        <p id="actions">
+                            <button type="button" className='LoginOrRegister' onClick={handleSwitch}>
+                                Create New User
+                            </button>
+                            <button className='LoginOrRegister'>Login</button>
+                        </p>
+                    </>
+                )}
             </div>
+
         </form>
     );
 }

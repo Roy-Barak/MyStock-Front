@@ -1,4 +1,3 @@
-import StockWelcomeImage from "../../../assests/images/BackgroundForLogin.webp";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Lottie from "lottie-react";
@@ -111,74 +110,72 @@ export default function RegisterPage({handleSwitch, handleUser}) {
     console.log(userInput)
     return (
         <form onSubmit={handleSubmit}>
-            <div className="img-div">
-                <img className="login-img" src={StockWelcomeImage} alt="Stock Market"/>
-                <div id="login">
-                    {loading ? (
-                        <div className="login-loading">
-                            <Lottie animationData={loginLoading} loop={true}/>
-                        </div>
-                    ) : (
-                        <>
-                            <h1>Register!</h1>
-                            <p>
-                                <label>Name</label>
-                                <input type="text" required
-                                       onBlur={(event) => handleUserInput('name', event.target.value)}/>
-                            </p>
-                            <p>
-                                <label>Email address</label>
-                                <input
-                                    className={emailNotValid ? "input-argument-not-valid" : ""}
-                                    type="email"
-                                    required
-                                    onBlur={(event) => {
-                                        handleUserInput('email', event.target.value);
-                                        handleEdit('email');
-                                    }}
-                                />
-                            </p>
-                            {emailNotValid &&
-                                <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}><p>Email not valid</p>
-                                </div>}
-                            <p>
-                                <label>Password</label>
-                                <input
-                                    type="password"
-                                    onBlur={(event) => {
-                                        handleUserInput('password', event.target.value);
-                                        handleEdit('password');
-                                    }}
-                                />
-                            </p>
-                            <p>
-                                <label>Confirm password</label>
-                                <input
-                                    className={passwordsNoMatch ? "input-argument-not-valid" : ""}
-                                    type="password"
-                                    onBlur={(event) => {
-                                        handleUserInput('confirmPassword', event.target.value);
-                                        handleEdit('confirmPassword');
-                                    }}
-                                />
-                            </p>
-                            {passwordsNoMatch &&
-                                <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}><p>Passwords do not
-                                    match</p></div>}
-                            {emailIsAlreadyUsed &&
-                                <div className="field-not-valid"><p>This email is already registered. Please use a
-                                    different email or log in.</p></div>}
+            <div id="login">
+                {loading ? (
+                    <div className="login-loading">
+                        <Lottie animationData={loginLoading} loop={true}/>
+                    </div>
+                ) : (
+                    <>
+                        <h1>Register!</h1>
+                        <p>
+                            <label>Name</label>
+                            <input type="text" required
+                                   onBlur={(event) => handleUserInput('name', event.target.value)}/>
+                        </p>
+                        <p>
+                            <label>Email address</label>
+                            <input
+                                className={emailNotValid ? "input-argument-not-valid" : ""}
+                                type="email"
+                                required
+                                onBlur={(event) => {
+                                    handleUserInput('email', event.target.value);
+                                    handleEdit('email');
+                                }}
+                            />
+                        </p>
+                        {emailNotValid &&
+                            <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}><p>Email not valid</p>
+                            </div>}
+                        <p>
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                onBlur={(event) => {
+                                    handleUserInput('password', event.target.value);
+                                    handleEdit('password');
+                                }}
+                            />
+                        </p>
+                        <p>
+                            <label>Confirm password</label>
+                            <input
+                                className={passwordsNoMatch ? "input-argument-not-valid" : ""}
+                                type="password"
+                                onBlur={(event) => {
+                                    handleUserInput('confirmPassword', event.target.value);
+                                    handleEdit('confirmPassword');
+                                }}
+                            />
+                        </p>
+                        {passwordsNoMatch &&
+                            <div className={`field-not-valid ${scaleMessage ? 'blink' : ''}`}><p>Passwords do not
+                                match</p></div>}
+                        {emailIsAlreadyUsed &&
+                            <div className="field-not-valid"><p>This email is already registered. Please use a
+                                different email or log in.</p></div>}
 
-                            <p id="actions">
-                                <button type="button" className='LoginOrRegister' onClick={handleSwitch}>
-                                    Already have an account
-                                </button>
-                                <button className='LoginOrRegister'>Sign Up</button>
-                            </p>
-                        </>
-                    )}
-                </div>
+                        <p id="actions">
+                            <button type="button" className='LoginOrRegister' onClick={handleSwitch}>
+                                Already have an account
+                            </button>
+                            <button className='LoginOrRegister'>Sign Up</button>
+                        </p>
+                    </>
+                )}
             </div>
+
         </form>
     );
 }
