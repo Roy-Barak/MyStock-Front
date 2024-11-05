@@ -30,6 +30,7 @@ export default function AboutPart2() {
                 <h4 className="about-sub-subtitle">Key Features</h4>
                 <ul className="about-list">
                     <li>RESTful API endpoints to serve the frontend and manage user interactions.</li>
+                    <li>Deployed on Vercel</li>
                     <li>Integration with Yahoo API for real-time stock data.</li>
                     <li>JWT-based authentication to secure user sessions.</li>
                     <li>MongoDB integration for efficient data storage and retrieval.</li>
