@@ -1,6 +1,8 @@
+import backEndUrl from "../../config";
+
 async function fetchStockDate(symbol) {
     // Flask API endpoint
-    const API_ENDPOINT = `https://mystock-backend.vercel.app/get/stock/${symbol}`;
+    const API_ENDPOINT = `${backEndUrl}/get/stock/${symbol}`;
 
     try {
         const fetchResponse = await fetch(API_ENDPOINT);

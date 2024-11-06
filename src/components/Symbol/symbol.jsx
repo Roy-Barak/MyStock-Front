@@ -8,12 +8,17 @@ function Symbol(props) {
 
 
     useEffect(() => {
+
         const fetchData = async () => {
 
             const data = await fetchStockDate(props.name);
-            if (data) {
-                setStockData(data[0]);
+            console.log(data)
 
+            if (data) {
+                setStockData(data[0].price !== null ? data[0] : data[1]);
+
+            } else {
+                console.error("No data received");
             }
         };
 
@@ -29,8 +34,10 @@ function Symbol(props) {
         );
     }
 
+    const prevValue = stockData.prevValue || stockData.previousClose;
+
     // Calculate change percentage
-    const changePrecentage = (100 * stockData.price / stockData.prevValue - 100).toFixed(2);
+    const changePrecentage = (100 * stockData.price / prevValue - 100).toFixed(2);
 
     // Determine the color based on the value of changePrecentage
     const changeColor = changePrecentage > 0 ? '#28a745' : '#dc3545';
@@ -38,10 +45,17 @@ function Symbol(props) {
     return (
         <div className="symbol">
             <h3 className="symbol-title">{props.name}</h3>
-            <p className="symbol-price"> Price: {stockData.price}</p>
-            <p className="symbol-change" style={{color: changeColor}}>
-                {changePrecentage}%
-            </p>
+            {stockData.price !== undefined ? (
+                <>
+                    <p className="symbol-price">Price: {stockData.price}</p>
+                    <p className="symbol-change" style={{color: changeColor}}>
+                        {changePrecentage}%
+                    </p>
+                </>
+            ) : (
+                <p>Couldn't find this symbol</p>
+            )}
+
         </div>
     );
 }

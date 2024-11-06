@@ -36,6 +36,7 @@ export default function TabStock({children, stock, isItSearch}) {
                             <input className="card-search-input" placeholder="Enter stock symbol" type="text" required
                                    value={inputStock}
                                    onChange={handleInput}/>
+
                             <button className="card-search-button" onClick={handleClick}>Search
                             </button>
                         </div>
